@@ -6,7 +6,6 @@
     <title>Harshvardhan Industry</title>
     <style>
         body {
-
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -14,78 +13,90 @@
             font-family: Arial, sans-serif;
             padding-top: 50px;
             background-color: rgb(95, 79, 79);
-            
+            margin: 0;
         }
+
         #pdf-container {
             margin-top: 20px;
         }
-        .box{
+
+        .box {
             border: 2px solid;
             border-top-right-radius: 10px;
             border-bottom-left-radius: 10px;
-            width: 50%;
+            width: 80%;
+            max-width: 500px;
             text-align: center;
-            height: 50%;
+            padding: 20px;
+            margin: 20px 0;
             background: linear-gradient(to top, #1bb913 50%, #ff1e9a 50%);
         }
-        .button{
-            width: auto;
-            height: auto;
-            font-size: 20px;
+
+        .button, #imageInput, #pdfInput {
+            width: 100%;
+            max-width: 200px;
+            padding: 10px;
+            font-size: 18px;
             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
             font-style: italic;
             color: #ffffff;
             background-color: #ff1e9a;
             border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
         }
-        #imageInput{
-            width: auto;
-            height: auto;
-            font-size: 20px;
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            font-style: italic;
-            color: #ffffff;
-            border-radius: 10px;
-        }
-        #pdfInput{
-            width: auto;
-            height: auto;
-            font-size: 20px;
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            font-style: italic;
-            color: #ffffff;
-            border-radius: 10px;
-        }
-        .para{
+
+        .para {
             color: rgb(9, 220, 108);
             text-decoration: dashed;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        /* Responsive Styling */
+        @media (max-width: 600px) {
+            body {
+                padding-top: 20px;
+            }
+
+            .box {
+                width: 90%;
+                padding: 15px;
+            }
+
+            .button, #imageInput, #pdfInput {
+                font-size: 16px;
+            }
+
+            .para {
+                font-size: 14px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="box">
-    <h1>Image to PDF Converter</h1>
-    <input type="file" id="imageInput" accept="image/*">
-    <button class="button" onclick="convertImageToPDF()">Convert to PDF</button>
-    <div id="pdf-container"></div>
-</div>
-<br>
+        <h1>Image to PDF Converter</h1>
+        <input type="file" id="imageInput" accept="image/*">
+        <button class="button" onclick="convertImageToPDF()">Convert to PDF</button>
+        <div id="pdf-container"></div>
+    </div>
+    
     <div class="box">
-        <h1>Convert PDF to Images and Download</h1><br>
+        <h1>Convert PDF to Images and Download</h1>
         <input type="file" id="pdfInput" accept="application/pdf">
         <button class="button" onclick="convertPDFToImages()">Convert and Download ZIP</button>
-    <br><br>
-</div>
+    </div>
 
-    <!-- jsPDF Library -->
+    <p class="para">made with ❤</p>
+    <p class="para">Harshvardhan Industry</p>
+
+    <!-- Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
     <script src="script.js"></script>
-
-    <p class="para">made with ❤</p>
-    <p class="para">Harshvardhan Industry</p>
 </body>
 </html>
